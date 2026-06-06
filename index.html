@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <title>My portfolio</title>
+    <style>
+      :root {
+        --bg: #0f1419;
+        --card: #111827;
+        --primary: #7c4dff;
+        --text: #e8eef7;
+        --muted: #7c4dff;
+      }
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        background-color: var(--bg);
+        color: var(--text);
+        font-family:
+          "apple-system", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+          "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+      .pofocard {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        height: 50%;
+        border: #7c4dff solid 1px;
+        border-radius: 10px;
+      }
+
+      .portfolionav {
+        display: flex;
+        flex-direction: row;
+
+        height: 100px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .header > i {
+        margin-right: 10px;
+        margin-left: 10px;
+        font-size: 25px;
+      }
+      .header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+      }
+      .title {
+        display: flex;
+        justify-content: space-between;
+
+        margin-left: 50px;
+        margin-right: 10px;
+      }
+      .title > a {
+        position: relative;
+        margin-right: 10px;
+        margin-left: 10px;
+        text-decoration: none;
+        color: var(--text);
+        transition: 0.3s;
+      }
+      .title > a:hover {
+        color: var(--muted);
+      }
+      .aa::after {
+        background-color: #704dff;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        content: "";
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 0.3s;
+      }
+
+      .cvdownloadbtn {
+        margin-left: auto;
+        margin-right: 10px;
+      }
+      .cvdownloadbtn button {
+        display: flex;
+
+        border: solid 1px #7c4dff;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: transparent;
+        color: var(--text);
+        transition: 0.3s;
+      }
+      @media (max-width: 768px) {
+        .cvdownloadbtn button {
+          display: flex;
+          margin-left: 0;
+          object-fit: cover;
+        }
+      }
+      .cvdownloadbtn button:hover {
+        background-color: #704dff;
+        cursor: pointer;
+
+        transform: translate (-15px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+      }
+      .cardinfo {
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+        margin-left: 30px;
+        margin-right: 10px;
+        flex: 1;
+      }
+      .cardinfo > p {
+        border: 1px solid #704dff;
+        border-radius: 5px;
+        font-size: 0.6rem;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      .cardinfo > em {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+      .cardimage {
+        display: flex;
+        flex: 1;
+      }
+      .notice-me {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .notice-me article > button {
+        display: flex;
+        border: solid 1px #7c4dff;
+        border-radius: 5px;
+        padding: 10px;
+        margin-right: 15px;
+        color: var(--text);
+        transition: 0.3s;
+        background-color: transparent;
+      }
+      .notice-me article > button:hover {
+        background-color: var(--primary);
+        cursor: pointer;
+        transform: translate (-15px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="pofocard">
+      <nav class="portfolionav">
+        <div class="header">
+          <i class="fas fa-code" style="color: var(--primary)"></i>
+          <h1><tile>RozanDev</tile></h1>
+        </div>
+        <div class="title">
+          <a href="#" class="aa">Home</a>
+
+          <a href="#">About</a>
+          <a href="#">Skills</a>
+          <a href="#">Projects</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="cvdownloadbtn">
+          <button>
+            <p>DownLoadCV</p>
+            <i class="fas fa-download"></i>
+          </button>
+        </div>
+      </nav>
+
+      <div class="cardinfo">
+        <p>Frontend Developer</p>
+
+        <em
+          >Hi, I'm <strong style="color: #704dff">Rozan</strong>,<br />
+          I build modern <br />web experiences.</em
+        >
+        <p style="border: 0">
+          I am a passionate fronted developer focused on <br />
+          building responsive and user friendly websites.
+          <br />let's build something amazing together!
+        </p>
+
+        <section class="notice-me">
+          <article>
+            <button>
+              View My Work<i
+                class="fas fa-arrow-right"
+                style="color: var(--primary)"
+              ></i>
+            </button>
+          </article>
+          <article>
+            <button>
+              Contact Me<i
+                class="fas fa-envelope"
+                style="color: var(--primary)"
+              ></i>
+            </button>
+          </article>
+        </section>
+      </div>
+      <div class="cardimage"></div>
+    </div>
+  </body>
+</html>
