@@ -76,6 +76,16 @@
         color: var(--text);
         transition: 0.3s;
       }
+      @media (max-width: 768px) {
+        .title > a {
+          display: flex;
+          flex-direction: column;
+          margin-left: 0;
+          flex-wrap: wrap;
+          font-size: 0.6rem;
+        }
+      }
+
       .title > a:hover {
         color: var(--muted);
       }
@@ -90,6 +100,20 @@
         left: 50%;
         transform: translateX(-50%);
         transition: 0.3s;
+      }
+      @media (max-width: 768px) {
+        .aa::after {
+          background-color: #704dff;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: 0.3s;
+        }
       }
 
       .cvdownloadbtn {
@@ -111,14 +135,24 @@
           display: flex;
           margin-left: 0;
           object-fit: cover;
+
+          font-size: 0.6rem;
+          width: 80px;
+          height: 40px;
         }
       }
       .cvdownloadbtn button:hover {
         background-color: #704dff;
         cursor: pointer;
 
-        transform: translate (-15px);
+        transform: translateX(-15px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+      }
+      .card-articles {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
       }
       .cardinfo {
         display: flex;
@@ -137,17 +171,15 @@
         margin-bottom: 10px;
       }
       .cardinfo > em {
-        font-size: 1.2rem;
+        font-size: 2rem;
         margin-bottom: 10px;
       }
-      .cardimage {
-        display: flex;
-        flex: 1;
-      }
+
       .notice-me {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        flex: 1;
       }
       .notice-me article > button {
         display: flex;
@@ -163,7 +195,90 @@
         background-color: var(--primary);
         cursor: pointer;
         transform: translate (-15px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 10px 20px rgba(184, 142, 142, 0.25);
+      }
+      @media (max-width: 768px) {
+        .notice-me article > button {
+          display: flex;
+          margin-left: 0;
+          object-fit: cover;
+          font-size: 0.6rem;
+          width: 80px;
+          height: 40px;
+        }
+      }
+      .social {
+        display: flex;
+        margin: 10px 10px 10px 10px;
+        justify-content: space-between;
+      }
+      .social > a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        margin-right: 10px;
+        color: var(--text);
+        transition: 0.3s;
+      }
+      .social > a:hover {
+        color: var(--muted);
+      }
+      .cardimage::before {
+        content: "";
+
+        position: absolute;
+
+        width: 70%;
+
+        aspect-ratio: 1;
+
+        border-radius: 50%;
+
+        background: linear-gradient(#130a22, #3b82f6);
+
+        left: 50%;
+
+        top: 50%;
+
+        transform: translate(-50%, -81%);
+
+        z-index: 1;
+      }
+      .cardimage {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+
+        flex: 1;
+      }
+      .cardimage img {
+        width: 75%;
+
+        max-width: 420px;
+
+        object-fit: cover;
+        z-index: 3;
+      }
+      .orbit {
+        position: absolute;
+
+        width: min(90%, 600px);
+
+        aspect-ratio: 2 / 1;
+
+        border: 2px solid rgba(168, 85, 247, 0.25);
+
+        border-radius: 50%;
+
+        top: 55%;
+
+        left: 52%;
+
+        transform: translate(-50%, -111%) rotate(-20deg);
+
+        z-index: 2;
       }
     </style>
   </head>
@@ -177,7 +292,6 @@
         </div>
         <div class="title">
           <a href="#" class="aa">Home</a>
-
           <a href="#">About</a>
           <a href="#">Skills</a>
           <a href="#">Projects</a>
@@ -190,40 +304,50 @@
           </button>
         </div>
       </nav>
+      <section class="card-articles">
+        <div class="cardinfo">
+          <p>Frontend Developer</p>
 
-      <div class="cardinfo">
-        <p>Frontend Developer</p>
+          <em
+            >Hi, I'm <strong style="color: #704dff">Rozan</strong>,<br />
+            I build modern <br />web experiences.</em
+          >
+          <p style="border: 0">
+            I am a passionate fronted developer focused on <br />
+            building responsive and user friendly websites.
+            <br />let's build something amazing together!
+          </p>
 
-        <em
-          >Hi, I'm <strong style="color: #704dff">Rozan</strong>,<br />
-          I build modern <br />web experiences.</em
-        >
-        <p style="border: 0">
-          I am a passionate fronted developer focused on <br />
-          building responsive and user friendly websites.
-          <br />let's build something amazing together!
-        </p>
-
-        <section class="notice-me">
-          <article>
-            <button>
-              View My Work<i
-                class="fas fa-arrow-right"
-                style="color: var(--primary)"
-              ></i>
-            </button>
-          </article>
-          <article>
-            <button>
-              Contact Me<i
-                class="fas fa-envelope"
-                style="color: var(--primary)"
-              ></i>
-            </button>
-          </article>
-        </section>
-      </div>
-      <div class="cardimage"></div>
+          <section class="notice-me">
+            <article>
+              <button>
+                View My Work<i
+                  class="fas fa-arrow-right"
+                  style="color: var(--primary)"
+                ></i>
+              </button>
+            </article>
+            <article>
+              <button>
+                Contact Me<i
+                  class="fas fa-envelope"
+                  style="color: var(--primary)"
+                ></i>
+              </button>
+            </article>
+          </section>
+          <div class="social">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+        <div class="cardimage">
+          <div class="orbit"></div>
+          <img src="images/hero.png" alt="RozanDev" />
+        </div>
+      </section>
     </div>
   </body>
 </html>
