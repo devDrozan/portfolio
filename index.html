@@ -25,6 +25,7 @@
       }
       body {
         display: flex;
+
         background-color: var(--bg);
         color: var(--text);
         font-family:
@@ -32,20 +33,61 @@
           "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         overflow-x: hidden;
         scroll-behavior: smooth;
+        padding: 24px;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        width: min(100%, 1000px);
+        max-width: 100%;
+        min-height: 100vh;
+
+        gap: 24px;
       }
       .pofocard {
         display: flex;
+        position: relative;
         flex-direction: column;
         width: 60%;
-        height: 50%;
+        height: auto;
         border: #7c4dff solid 1px;
         border-radius: 10px;
+        padding: 20px;
+        align-items: flex-start;
+        margin-left: 0%;
       }
+
+      /*@media (max-width: 768px) {
+        main {
+          width: 100%;
+          padding: 12px;
+          align-items: center;
+        }
+        .pofocard {
+          padding: 16px;
+        }
+        .portfolionav {
+          justify-content: center;
+          gap: 12px;
+        }
+        .title {
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-left: 0;
+          margin-right: 0;
+        }
+        .cvdownloadbtn {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin: 0;
+        }
+      }*/
 
       .portfolionav {
         display: flex;
         flex-direction: row;
-
+        position: relative;
         height: 100px;
         align-items: center;
         flex-wrap: wrap;
@@ -79,10 +121,9 @@
       @media (max-width: 768px) {
         .title > a {
           display: flex;
-          flex-direction: column;
+          position: relative;
           margin-left: 0;
           flex-wrap: wrap;
-          font-size: 0.6rem;
         }
       }
 
@@ -121,8 +162,10 @@
         margin-right: 10px;
       }
       .cvdownloadbtn button {
+        position: relative;
         display: flex;
-
+        justify-content: center;
+        align-items: center;
         border: solid 1px #7c4dff;
         border-radius: 5px;
         padding: 10px;
@@ -133,12 +176,13 @@
       @media (max-width: 768px) {
         .cvdownloadbtn button {
           display: flex;
+          position: relative;
           margin-left: 0;
           object-fit: cover;
 
-          font-size: 0.6rem;
-          width: 80px;
-          height: 40px;
+          font-size: 0.5rem;
+          width: 70px;
+          height: 30px;
         }
       }
       .cvdownloadbtn button:hover {
@@ -173,6 +217,24 @@
       .cardinfo > em {
         font-size: 2rem;
         margin-bottom: 10px;
+      }
+      @media (max-width: 768px) {
+        .cardinfo > p {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 5px;
+          flex-wrap: wrap;
+          font-size: 0.4rem;
+        }
+      }
+      @media (max-width: 768px) {
+        .cardinfo > em {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 5px;
+          flex-wrap: wrap;
+          font-size: 1rem;
+        }
       }
 
       .notice-me {
@@ -280,74 +342,101 @@
 
         z-index: 2;
       }
+      .overview {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        width: 60%;
+      }
+      .colorConcept {
+        display: flex;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #3b82f6;
+        border: 1px solid blanchedalmond;
+      }
+      .sectionOverview {
+        display: flex;
+        height: 100px;
+        flex-direction: column;
+        background-color: #7c4dff;
+        border: 1px solid blanchedalmond;
+      }
     </style>
   </head>
 
   <body>
-    <div class="pofocard">
-      <nav class="portfolionav">
-        <div class="header">
-          <i class="fas fa-code" style="color: var(--primary)"></i>
-          <h1><tile>RozanDev</tile></h1>
-        </div>
-        <div class="title">
-          <a href="#" class="aa">Home</a>
-          <a href="#">About</a>
-          <a href="#">Skills</a>
-          <a href="#">Projects</a>
-          <a href="#">Contact</a>
-        </div>
-        <div class="cvdownloadbtn">
-          <button>
-            <p>DownLoadCV</p>
-            <i class="fas fa-download"></i>
-          </button>
-        </div>
-      </nav>
-      <section class="card-articles">
-        <div class="cardinfo">
-          <p>Frontend Developer</p>
-
-          <em
-            >Hi, I'm <strong style="color: #704dff">Rozan</strong>,<br />
-            I build modern <br />web experiences.</em
-          >
-          <p style="border: 0">
-            I am a passionate fronted developer focused on <br />
-            building responsive and user friendly websites.
-            <br />let's build something amazing together!
-          </p>
-
-          <section class="notice-me">
-            <article>
-              <button>
-                View My Work<i
-                  class="fas fa-arrow-right"
-                  style="color: var(--primary)"
-                ></i>
-              </button>
-            </article>
-            <article>
-              <button>
-                Contact Me<i
-                  class="fas fa-envelope"
-                  style="color: var(--primary)"
-                ></i>
-              </button>
-            </article>
-          </section>
-          <div class="social">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
+    <main>
+      <div class="pofocard">
+        <nav class="portfolionav">
+          <div class="header">
+            <i class="fas fa-code" style="color: var(--primary)"></i>
+            <h1><tile>RozanDev</tile></h1>
           </div>
-        </div>
-        <div class="cardimage">
-          <div class="orbit"></div>
-          <img src="images/hero.png" alt="RozanDev" />
-        </div>
-      </section>
-    </div>
+          <div class="title">
+            <a href="#" class="aa">Home</a>
+            <a href="#">About</a>
+            <a href="#">Skills</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="cvdownloadbtn">
+            <button>
+              <p>DownLoadCV</p>
+              <i class="fas fa-download"></i>
+            </button>
+          </div>
+        </nav>
+        <section class="card-articles">
+          <div class="cardinfo">
+            <p>Frontend Developer</p>
+
+            <em
+              >Hi, I'm <strong style="color: #704dff">Rozan,</strong><br />I
+              build modern <br />web experiences.</em
+            >
+            <p style="border: 0">
+              I am a passionate fronted developer focused on <br />
+              building responsive and user friendly websites.
+              <br />let's build something amazing together!
+            </p>
+
+            <section class="notice-me">
+              <article>
+                <button>
+                  View My Work<i
+                    class="fas fa-arrow-right"
+                    style="color: var(--primary)"
+                  ></i>
+                </button>
+              </article>
+              <article>
+                <button>
+                  Contact Me<i
+                    class="fas fa-envelope"
+                    style="color: var(--primary)"
+                  ></i>
+                </button>
+              </article>
+            </section>
+            <div class="social">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+          <div class="cardimage">
+            <div class="orbit"></div>
+            <img src="images/hero.png" alt="RozanDev" />
+          </div>
+        </section>
+      </div>
+      <div class="overview">
+        <section class="colorConcept"></section>
+        <section class="sectionOverview"></section>
+      </div>
+    </main>
   </body>
 </html>
