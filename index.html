@@ -24,8 +24,6 @@
         box-sizing: border-box;
       }
       body {
-        display: flex;
-
         background-color: var(--bg);
         color: var(--text);
         font-family:
@@ -35,11 +33,16 @@
         scroll-behavior: smooth;
         padding: 24px;
       }
+      .layout {
+        display: grid;
+        grid-template-columns: 5fr 3fr;
+      }
+
       main {
         display: flex;
         flex-direction: column;
-        width: min(100%, 1000px);
-        max-width: 100%;
+
+        width: 100%;
         min-height: 100vh;
 
         gap: 24px;
@@ -48,8 +51,8 @@
         display: flex;
         position: relative;
         flex-direction: column;
-        width: 60%;
-        height: auto;
+        width: 100%;
+        height: 60%;
         border: #7c4dff solid 1px;
         border-radius: 10px;
         padding: 20px;
@@ -88,7 +91,9 @@
         display: flex;
         flex-direction: row;
         position: relative;
-        height: 100px;
+        height: auto;
+        width: 100%;
+        justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
       }
@@ -197,6 +202,8 @@
         flex-direction: row;
         justify-content: space-between;
         height: auto;
+        margin-top: 25px;
+        width: 100%;
       }
       .cardinfo {
         display: flex;
@@ -291,7 +298,7 @@
 
         position: absolute;
 
-        width: 70%;
+        width: 49%;
 
         aspect-ratio: 1;
 
@@ -303,7 +310,7 @@
 
         top: 50%;
 
-        transform: translate(-50%, -81%);
+        transform: translate(-86%, -82%);
 
         z-index: 1;
       }
@@ -316,7 +323,7 @@
         flex: 1;
       }
       .cardimage img {
-        width: 75%;
+        width: 40%;
 
         max-width: 420px;
 
@@ -345,7 +352,8 @@
       .overview {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        width: 60%;
+        width: 100%;
+        height: 100%;
       }
       .colorConcept {
         display: flex;
@@ -358,86 +366,131 @@
       }
       .sectionOverview {
         display: flex;
-        height: 100px;
+        flex-direction: column;
+
+        background-color: #7c4dff;
+        border: 1px solid blanchedalmond;
+        height: 100%;
+      }
+      .myservices {
+        display: flex;
+        flex-direction: row;
+        background-color: #040a15;
+        border: 1px solid blanchedalmond;
+        height: 100%;
+      }
+      .UIsections {
+        display: flex;
+        flex-direction: row;
+        background-color: #070d16;
+        border: 1px solid blanchedalmond;
+        height: 100%;
+      }
+
+      .sub-content {
+        display: grid;
+        position: relative;
         flex-direction: column;
         background-color: #7c4dff;
         border: 1px solid blanchedalmond;
+        height: 100vh;
+        width: 100%;
+        margin-right: 60%;
+        margin-top: 0%;
+        grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+      }
+      .sub-content > div {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid blanchedalmond;
+        background-color: brown;
       }
     </style>
   </head>
 
   <body>
-    <main>
-      <div class="pofocard">
-        <nav class="portfolionav">
-          <div class="header">
-            <i class="fas fa-code" style="color: var(--primary)"></i>
-            <h1><tile>RozanDev</tile></h1>
-          </div>
-          <div class="title">
-            <a href="#" class="aa">Home</a>
-            <a href="#">About</a>
-            <a href="#">Skills</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
-          </div>
-          <div class="cvdownloadbtn">
-            <button>
-              <p>DownLoadCV</p>
-              <i class="fas fa-download"></i>
-            </button>
-          </div>
-        </nav>
-        <section class="card-articles">
-          <div class="cardinfo">
-            <p>Frontend Developer</p>
-
-            <em
-              >Hi, I'm <strong style="color: #704dff">Rozan,</strong><br />I
-              build modern <br />web experiences.</em
-            >
-            <p style="border: 0">
-              I am a passionate fronted developer focused on <br />
-              building responsive and user friendly websites.
-              <br />let's build something amazing together!
-            </p>
-
-            <section class="notice-me">
-              <article>
-                <button>
-                  View My Work<i
-                    class="fas fa-arrow-right"
-                    style="color: var(--primary)"
-                  ></i>
-                </button>
-              </article>
-              <article>
-                <button>
-                  Contact Me<i
-                    class="fas fa-envelope"
-                    style="color: var(--primary)"
-                  ></i>
-                </button>
-              </article>
-            </section>
-            <div class="social">
-              <a href="#"><i class="fab fa-github"></i></a>
-              <a href="#"><i class="fab fa-linkedin"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-facebook"></i></a>
+    <div class="layout">
+      <main>
+        <div class="pofocard">
+          <nav class="portfolionav">
+            <div class="header">
+              <i class="fas fa-code" style="color: var(--primary)"></i>
+              <h1><tile>RozanDev</tile></h1>
             </div>
-          </div>
-          <div class="cardimage">
-            <div class="orbit"></div>
-            <img src="images/hero.png" alt="RozanDev" />
-          </div>
-        </section>
-      </div>
-      <div class="overview">
-        <section class="colorConcept"></section>
-        <section class="sectionOverview"></section>
-      </div>
-    </main>
-    <aside class="sub-content"></aside>
+            <div class="title">
+              <a href="#" class="aa">Home</a>
+              <a href="#">About</a>
+              <a href="#">Skills</a>
+              <a href="#">Projects</a>
+              <a href="#">Contact</a>
+            </div>
+            <div class="cvdownloadbtn">
+              <button>
+                <p>DownLoadCV</p>
+                <i class="fas fa-download"></i>
+              </button>
+            </div>
+          </nav>
+          <section class="card-articles">
+            <div class="cardinfo">
+              <p>Frontend Developer</p>
+
+              <em
+                >Hi, I'm <strong style="color: #704dff">Rozan,</strong><br />I
+                build modern <br />web experiences.</em
+              >
+              <p style="border: 0">
+                I am a passionate fronted developer focused on <br />
+                building responsive and user friendly websites.
+                <br />let's build something amazing together!
+              </p>
+
+              <section class="notice-me">
+                <article>
+                  <button>
+                    View My Work<i
+                      class="fas fa-arrow-right"
+                      style="color: var(--primary)"
+                    ></i>
+                  </button>
+                </article>
+                <article>
+                  <button>
+                    Contact Me<i
+                      class="fas fa-envelope"
+                      style="color: var(--primary)"
+                    ></i>
+                  </button>
+                </article>
+              </section>
+              <div class="social">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+              </div>
+            </div>
+            <div class="cardimage">
+              <div class="orbit"></div>
+              <img src="images/hero.png" alt="RozanDev" />
+            </div>
+          </section>
+        </div>
+        <div class="overview">
+          <section class="colorConcept"></section>
+          <section class="sectionOverview">
+            <div class="UIsections"></div>
+            <div class="myservices"></div>
+          </section>
+        </div>
+      </main>
+      <aside class="sub-content">
+        <div class="hero-preview"></div>
+        <div class="about-preview"></div>
+        <div class="skill-preview"></div>
+        <div class="project-preview"></div>
+        <div class="contact-preview"></div>
+      </aside>
+    </div>
   </body>
 </html>
