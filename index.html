@@ -262,7 +262,7 @@
       .notice-me article > button:hover {
         background-color: var(--primary);
         cursor: pointer;
-        transform: translate (-15px);
+        transform: translateX (-15px);
         box-shadow: 0 10px 20px rgba(184, 142, 142, 0.25);
       }
       @media (max-width: 768px) {
@@ -374,14 +374,15 @@
         display: flex;
         flex: 1;
         flex-direction: column;
-        align-items: center;
+
         border-bottom: 1px solid #a1a6ad;
         width: 80%;
       }
-      .colorConcept h5 {
+      .colorConcept h4 {
         display: flex;
         align-self: flex-start;
         padding: 10px;
+        margin-top: 20px;
       }
       .colorConcept {
         display: flex;
@@ -398,6 +399,7 @@
         height: 30px;
         margin-right: 10px;
         border-radius: 50%;
+        margin-top: 30px;
       }
       .color1 {
         background-color: #704dff;
@@ -416,36 +418,112 @@
       }
       .typoconcept {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         border-bottom: 1px solid #a1a6ad;
+        text-align: left;
         width: 80%;
-        text-align: right;
         line-height: 1.5rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
       }
 
       .sectionOverview {
         display: flex;
         flex-direction: column;
-        background-color: #7c4dff;
-        border: 1px solid blanchedalmond;
+        background-color: transparent;
+        gap: 10px;
         height: 100%;
         padding: 10px;
       }
       .myservices {
-        display: flex;
-        flex-direction: row;
-        background-color: #040a15;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
         border: 1px solid blanchedalmond;
         height: 100%;
+        align-items: center;
+        padding-left: 10px;
+        background-color: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow:
+          0 8px 32px 0 rgba(0, 0, 0.12),
+          inset 0 1px rgba(255, 255, 255, 0.25);
+
+        border-radius: 24px;
       }
       .UIsections {
-        display: flex;
-        flex-direction: row;
-        background-color: #070d16;
+        display: grid;
+        grid-template-rows: 2fr 4fr;
+
         border: 1px solid blanchedalmond;
         height: 100%;
+        align-items: center;
+        padding-left: 10px;
+        background-color: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow:
+          0 8px 32px 0 rgba(0, 0, 0.12),
+          inset 0 1px rgba(255, 255, 255, 0.25);
+
+        border-radius: 24px;
+        margin-top: -10px;
+      }
+      .overviewUiBtn {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 70%;
+      }
+      .overviewUiBtn > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: x-small;
+      }
+      .overviewUiBtn > div > button {
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow:
+          0 8px 32px 0 rgba(0, 0, 0.12),
+          inset 0 1px rgba(255, 255, 255, 0.25);
+
+        border-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+      }
+      .overviewUiBtn > div {
+        position: relative;
+      }
+
+      .overviewUiBtn > div:not(:last-child)::after {
+        content: "";
+        position: absolute;
+
+        width: 100%;
+        border-top: 2px dashed #8b5cf6;
+
+        top: 20px;
+        left: 112%;
+      }
+      .overviewUiBtn > div:not(:last-child)::before {
+        content: "➜";
+        position: absolute;
+
+        left: calc(100% + 100%);
+        top: 15px;
+
+        color: #8b5cf6;
       }
 
       .sub-content {
@@ -476,7 +554,7 @@
           <nav class="portfolionav">
             <div class="header">
               <i class="fas fa-code" style="color: var(--primary)"></i>
-              <h1><tile>RozanDev</tile></h1>
+              <h1>RozanDev</h1>
             </div>
             <div class="title">
               <a href="#" class="aa">Home</a>
@@ -540,7 +618,7 @@
         <div class="overview">
           <section class="designConcept">
             <article class="colorConcept">
-              <h5>Color Palette</h5>
+              <h4>Color Palette</h4>
               <div class="colorPalette">
                 <div class="color1"></div>
                 <div class="color2"></div>
@@ -550,14 +628,41 @@
               </div>
             </article>
             <article class="typoconcept">
-              <h5>Typography</h5>
+              <h4>Typography</h4>
               <b>Poppins</b>
               <p>Aa Bb Cc Dd Ee Ff</p>
               <number>0123456789</number>
             </article>
           </section>
           <section class="sectionOverview">
-            <div class="UIsections"></div>
+            <div class="UIsections">
+              <h4>Section Overview</h4>
+              <article class="overviewUiBtn">
+                <div>
+                  <button><i class="fas fa-home"></i></button><span>Home</span>
+                </div>
+
+                <div>
+                  <button><i class="fas fa-user"></i></button
+                  ><span>About Me</span>
+                </div>
+
+                <div>
+                  <button><i class="fas fa-code"></i></button
+                  ><span>Skills</span>
+                </div>
+
+                <div>
+                  <button><i class="fas fa-project-diagram"></i></button
+                  ><span>Projects</span>
+                </div>
+
+                <div>
+                  <button><i class="fas fa-envelope"></i></button
+                  ><span>Contact</span>
+                </div>
+              </article>
+            </div>
             <div class="myservices"></div>
           </section>
         </div>
