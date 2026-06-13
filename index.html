@@ -194,7 +194,7 @@
         background-color: #704dff;
         cursor: pointer;
 
-        transform: translateX(-15px);
+        transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
       }
       .card-articles {
@@ -437,7 +437,6 @@
       .myservices {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-
         border: 1px solid blanchedalmond;
         height: 100%;
         align-items: center;
@@ -449,9 +448,132 @@
         box-shadow:
           0 8px 32px 0 rgba(0, 0, 0.12),
           inset 0 1px rgba(255, 255, 255, 0.25);
-
         border-radius: 24px;
+        gap: 10px;
       }
+      .myservices > section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 40%;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow:
+          0 8px 32px 0 rgba(0, 0, 0.12),
+          inset 0 1px rgba(255, 255, 255, 0.25);
+        border-radius: 5px;
+        margin: 2px;
+      }
+      .myservices > section > article {
+        display: flex;
+        position: relative;
+        flex: 1;
+        margin-left: 5px;
+      }
+      .myservices > section > article > i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        margin-left: 0px;
+        z-index: 3;
+      }
+      .responsive article:first-child {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .responsive article:first-child::before {
+        content: "";
+        position: absolute;
+
+        width: 80%;
+        aspect-ratio: 1;
+
+        border-radius: 50%;
+        background: rgba(30, 208, 21, 0.25);
+
+        z-index: 1;
+        transform: translate(2px, 0px);
+      }
+      .modrenui article:first-child {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .modrenui article:first-child::before {
+        content: "";
+        position: absolute;
+
+        width: 100%;
+        aspect-ratio: 1;
+
+        border-radius: 50%;
+        background: rgba(30, 208, 21, 0.25);
+
+        z-index: 1;
+        transform: translate(2px, 0px);
+      }
+      .peformance article:first-child {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .peformance article:first-child::before {
+        content: "";
+        position: absolute;
+
+        width: 100%;
+        aspect-ratio: 1;
+
+        border-radius: 50%;
+        background: rgba(30, 208, 21, 0.25);
+
+        z-index: 1;
+        transform: translate(2px, 0px);
+      }
+      .seofriendly article:first-child {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .seofriendly article:first-child::before {
+        content: "";
+        position: absolute;
+
+        width: 100%;
+        aspect-ratio: 1;
+
+        border-radius: 50%;
+        background: rgba(30, 208, 21, 0.25);
+
+        z-index: 1;
+        transform: translate(2px, 0px);
+      }
+
+      .servicesDescription {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .servicesDescription > h5 {
+        color: #3b82f6;
+        font-size: 0.6rem;
+        margin-top: 5px;
+      }
+      .servicesDescription p {
+        font-size: 0.6rem;
+      }
+
       .UIsections {
         display: grid;
         grid-template-rows: 2fr 4fr;
@@ -631,7 +753,7 @@
               <h4>Typography</h4>
               <b>Poppins</b>
               <p>Aa Bb Cc Dd Ee Ff</p>
-              <number>0123456789</number>
+              <p>0123456789</p>
             </article>
           </section>
           <section class="sectionOverview">
@@ -663,7 +785,40 @@
                 </div>
               </article>
             </div>
-            <div class="myservices"></div>
+            <div class="myservices">
+              <section class="responsive">
+                <article><i class="fas fa-desktop-alt"></i></article>
+                <article class="servicesDescription">
+                  <h5>Responsive</h5>
+                  <br />
+                  <p>Mobile First</p>
+                </article>
+              </section>
+              <section class="modrenui">
+                <article><i class="fas fa-fire-alt"></i></article>
+                <article class="servicesDescription">
+                  <h5>Modern UI</h5>
+                  <br />
+                  <p>Clean Design</p>
+                </article>
+              </section>
+              <section class="peformance">
+                <article><i class="fas fa-tachometer-alt"></i></article>
+                <article class="servicesDescription">
+                  <h5>Performance</h5>
+                  <br />
+                  <p>Optimized</p>
+                </article>
+              </section>
+              <section class="seofriendly">
+                <article><i class="fas fa-search"></i></article>
+                <article class="servicesDescription">
+                  <h5>SEO Friendly</h5>
+                  <br />
+                  <p>Best Practices</p>
+                </article>
+              </section>
+            </div>
           </section>
         </div>
       </main>
