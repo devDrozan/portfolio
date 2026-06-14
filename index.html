@@ -36,6 +36,7 @@
       .layout {
         display: grid;
         grid-template-columns: 5fr 3fr;
+        gap: 24px;
       }
 
       main {
@@ -45,7 +46,7 @@
         width: 100%;
         min-height: 100vh;
 
-        gap: 24px;
+        gap: 20px;
       }
       .pofocard {
         display: flex;
@@ -247,7 +248,6 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        flex: 1;
       }
       .notice-me article > button {
         display: flex;
@@ -345,6 +345,25 @@
         left: 52%;
 
         transform: translate(-50%, -111%) rotate(-20deg);
+
+        z-index: 2;
+      }
+       .orbit-preview {
+        position: absolute;
+
+        width: min(66%, 600px);
+
+        aspect-ratio: 2 / 1;
+
+        border: 2px solid rgba(168, 85, 247, 0.25);
+
+        border-radius: 50%;
+
+        top: 55%;
+
+        left: 52%;
+
+        transform: translate(-50%, -75%) rotate(-20deg);
 
         z-index: 2;
       }
@@ -456,6 +475,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        width: 100%;
         height: 40%;
         border: 1px solid rgba(255, 255, 255, 0.18);
         backdrop-filter: blur(24px);
@@ -464,114 +484,76 @@
           0 8px 32px 0 rgba(0, 0, 0.12),
           inset 0 1px rgba(255, 255, 255, 0.25);
         border-radius: 5px;
-        margin: 2px;
+        margin: -5px;
+        padding: 5px;
+        min-height: 90px;
       }
       .myservices > section > article {
         display: flex;
         position: relative;
         flex: 1;
-        margin-left: 5px;
+        margin: 0px;
       }
-      .myservices > section > article > i {
+
+      .service-card article:first-child {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 1.2rem;
-        margin-left: 0px;
+        margin-left: -5px;
         z-index: 3;
       }
-      .responsive article:first-child {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .responsive article:first-child::before {
+
+      .service-card article:first-child::before {
         content: "";
         position: absolute;
 
-        width: 80%;
+        width: 70%;
         aspect-ratio: 1;
 
         border-radius: 50%;
-        background: rgba(30, 208, 21, 0.25);
+
+        background: var(--glow);
+
+        transform: translate(0, 0);
 
         z-index: 1;
-        transform: translate(2px, 0px);
       }
-      .modrenui article:first-child {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .modrenui article:first-child::before {
-        content: "";
-        position: absolute;
-
-        width: 100%;
-        aspect-ratio: 1;
-
-        border-radius: 50%;
-        background: rgba(30, 208, 21, 0.25);
-
-        z-index: 1;
-        transform: translate(2px, 0px);
-      }
-      .peformance article:first-child {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .peformance article:first-child::before {
-        content: "";
-        position: absolute;
-
-        width: 100%;
-        aspect-ratio: 1;
-
-        border-radius: 50%;
-        background: rgba(30, 208, 21, 0.25);
-
-        z-index: 1;
-        transform: translate(2px, 0px);
-      }
-      .seofriendly article:first-child {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      .responsive {
+        --glow: rgba(34, 197, 94, 0.25);
       }
 
-      .seofriendly article:first-child::before {
-        content: "";
-        position: absolute;
+      .modren-ui {
+        --glow: rgba(17, 100, 233, 0.25);
+      }
 
-        width: 100%;
-        aspect-ratio: 1;
+      .performance {
+        --glow: rgba(55, 35, 20, 0.25);
+      }
 
-        border-radius: 50%;
-        background: rgba(30, 208, 21, 0.25);
-
-        z-index: 1;
-        transform: translate(2px, 0px);
+      .seo-friendly {
+        --glow: rgba(168, 85, 247, 0.25);
       }
 
       .servicesDescription {
         display: flex;
+        width: 100%;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+
+        align-self: center;
+        padding: 0;
+        margin: 0;
       }
 
       .servicesDescription > h5 {
         color: #3b82f6;
         font-size: 0.6rem;
-        margin-top: 5px;
+        margin: 0px;
       }
       .servicesDescription p {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
+        margin: 0px;
       }
 
       .UIsections {
@@ -652,19 +634,155 @@
         display: grid;
         position: relative;
         flex-direction: column;
-        background-color: #7c4dff;
-        border: 1px solid blanchedalmond;
+        border-radius: 24px;
         height: 100vh;
         width: 100%;
         margin-right: 60%;
         margin-top: 0%;
         grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+        box-shadow:
+          0 8px 32px 0 rgba(0, 0, 0.12),
+          inset 0 1px rgba(255, 255, 255, 0.25);
       }
       .sub-content > div {
         display: flex;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background-color: transparent;
+      }
+      .hero-preview {
+        display: flex;
         flex-direction: column;
-        border: 1px solid blanchedalmond;
-        background-color: brown;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: black);
+      }
+      .hero-preview-nav {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex: 2;
+        background-color: transparent;
+      }
+      .preview-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        margin-left: 5px;
+      }
+      .hero-preview-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex: 8;
+        background-color: transparent;
+      }
+
+      .preview-tab {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        justify-content: center;
+        gap: 10px;
+        font-size: 0.6rem;
+      }
+      .preview-tab a {
+        text-decoration: none;
+        position: relative;
+        color: var(--text);
+        transition: 0.3s;
+      }
+      .preview-tab > a:hover {
+        color: var(--muted);
+      }
+      .preview-btn > button {
+        display: flex;
+        border: solid 1px #7c4dff;
+        border-radius: 5px;
+        padding: 5px;
+        color: var(--text);
+        transition: 0.3s;
+        background-color: transparent;
+        font-size: 0.6rem;
+
+        width: 80%;
+        height: 20%;
+      }
+      .preview-btn > button:hover {
+        color: var(--muted);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+      }
+      .preview-sub {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 20px;
+        width: 100%;
+        height: 100%;
+      }
+      .notice-me-preview {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .notice-me-preview > article > button {
+        display: flex;
+        border: solid 1px #7c4dff;
+        border-radius: 5px;
+        padding: 5px;
+        margin-right: 15px;
+        color: var(--text);
+        transition: 0.3s;
+        background-color: transparent;
+        font-size: 0.4rem;
+      }
+      .notice-me-preview > article > button:hover {
+        color: var(--muted);
+        transform: translateY(-1px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+      .hero-image {display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;}
+      .hero-image img{
+        position: absolute;
+        width: 100px;
+        height: 150px;
+        aspect-ratio:1;
+        object-fit: cover;
+        z-index: 3;
+      }
+       .hero-image::before {
+        content: "";
+
+        position: absolute;
+
+        width: 49%;
+
+        aspect-ratio: 1;
+
+        border-radius: 50%;
+
+        background: linear-gradient(#130a22, #3b82f6);
+
+        left: 50%;
+
+        top: 50%;
+
+        transform: translate(-45%, -84%);
+
+        z-index: 1;
       }
     </style>
   </head>
@@ -786,7 +904,7 @@
               </article>
             </div>
             <div class="myservices">
-              <section class="responsive">
+              <section class="responsive service-card">
                 <article><i class="fas fa-desktop-alt"></i></article>
                 <article class="servicesDescription">
                   <h5>Responsive</h5>
@@ -794,7 +912,7 @@
                   <p>Mobile First</p>
                 </article>
               </section>
-              <section class="modrenui">
+              <section class="modren-ui service-card">
                 <article><i class="fas fa-fire-alt"></i></article>
                 <article class="servicesDescription">
                   <h5>Modern UI</h5>
@@ -802,7 +920,7 @@
                   <p>Clean Design</p>
                 </article>
               </section>
-              <section class="peformance">
+              <section class="performance service-card">
                 <article><i class="fas fa-tachometer-alt"></i></article>
                 <article class="servicesDescription">
                   <h5>Performance</h5>
@@ -810,7 +928,7 @@
                   <p>Optimized</p>
                 </article>
               </section>
-              <section class="seofriendly">
+              <section class="seo-friendly service-card">
                 <article><i class="fas fa-search"></i></article>
                 <article class="servicesDescription">
                   <h5>SEO Friendly</h5>
@@ -823,7 +941,70 @@
         </div>
       </main>
       <aside class="sub-content">
-        <div class="hero-preview"></div>
+        <div class="hero-preview">
+          <section class="hero-preview-nav">
+            <article class="preview-header">
+              <i class="fas fa-code" style="color: var(--primary)"></i>
+              <h6>RozanDev</h6>
+            </article>
+            <article class="preview-tab">
+              <a href="#" class="aa">Home</a>
+              <a href="#">About</a>
+              <a href="#">Skills</a>
+              <a href="#">Projects</a>
+              <a href="#">Contact</a>
+            </article>
+            <article class="preview-btn">
+              <button>
+                <p>DownLoadCV</p>
+                <i class="fas fa-download"></i>
+              </button>
+            </article>
+          </section>
+          <div class="hero-preview-content">
+            <div class="preview-sub" style="line-height: 1.2em">
+              <p style="font-size: 0.3rem">Frontend Developer</p>
+              <em
+                >Hi, I'm <strong style="color: #704dff">Rozan,</strong><br />I
+                build modern <br />web experiences.</em
+              >
+              <p style="font-size: 0.5rem; line-height: 1em; margin-top: 10px">
+                I am a passionate fronted developer focused on <br />
+                building responsive and user friendly websites.
+                <br />let's build something amazing together!
+              </p>
+
+              <section class="notice-me-preview">
+                <article>
+                  <button>
+                    View My Work<i
+                      class="fas fa-arrow-right"
+                      style="color: var(--primary)"
+                    ></i>
+                  </button>
+                </article>
+                <article>
+                  <button>
+                    Contact Me<i
+                      class="fas fa-envelope"
+                      style="color: var(--primary)"
+                    ></i>
+                  </button>
+                </article>
+              </section>
+              <div class="social" style="font-size: 0.6rem; margin-top: 20px">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+              </div>
+            </div>
+            <div class="hero-image">
+              <div class="orbit-preview"></div>
+              <img src="images/hero.png" alt="RozanDev" />
+            </div>
+          </div>
+        </div>
         <div class="about-preview"></div>
         <div class="skill-preview"></div>
         <div class="project-preview"></div>
