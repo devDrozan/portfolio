@@ -348,7 +348,7 @@
 
         z-index: 2;
       }
-       .orbit-preview {
+      .orbit-preview {
         position: absolute;
 
         width: min(66%, 600px);
@@ -639,7 +639,7 @@
         width: 100%;
         margin-right: 60%;
         margin-top: 0%;
-        grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 3fr 2fr 2fr 2fr 2fr;
         box-shadow:
           0 8px 32px 0 rgba(0, 0, 0.12),
           inset 0 1px rgba(255, 255, 255, 0.25);
@@ -655,7 +655,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        background-color: black);
+        background-color: black;
       }
       .hero-preview-nav {
         display: grid;
@@ -751,19 +751,21 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         cursor: pointer;
       }
-      .hero-image {display: flex;
+      .hero-image {
+        display: flex;
         position: relative;
         align-items: center;
-        justify-content: center;}
-      .hero-image img{
+        justify-content: center;
+      }
+      .hero-image img {
         position: absolute;
         width: 100px;
         height: 150px;
-        aspect-ratio:1;
+        aspect-ratio: 1;
         object-fit: cover;
         z-index: 3;
       }
-       .hero-image::before {
+      .hero-image::before {
         content: "";
 
         position: absolute;
@@ -783,6 +785,87 @@
         transform: translate(-45%, -84%);
 
         z-index: 1;
+      }
+      .about-preview,
+      .skill-preview,
+      .project-preview {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .about-preview > section:first-child,
+      .skill-preview > section:first-child {
+        justify-content: center;
+        align-items: center;
+        align-items: center;
+        width: 100%;
+        flex: 1;
+        background: var(--bg);
+
+        border-radius: 10px;
+        font-size: 0.6rem;
+      }
+      .about-preview > section:first-child {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+      }
+      .skill-preview > section:first-child {
+        display: grid;
+      }
+
+      .about-preview > section:last-child,
+      .skill-preview > section:last-child {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex: 1;
+        background: var(--bg);
+
+        border-radius: 10px;
+        font-size: 0.6rem;
+      }
+      .about-preview > section:last-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+      .skill-preview > section:last-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+      .skill-preview > section:last-child .minicard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        width: 90%;
+        height: 80%;
+        font-size: 0.6rem;
+        margin: 5px;
+      }
+      .project-preview > section:first-child {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: 1;
+        border: #130a22;
+      }
+      .project-preview > section:last-child {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: 4;
+      }
+      .project-preview > section:last-child .minicard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        width: 90%;
+        height: 80%;
+        font-size: 0.6rem;
+        margin: 5px;
       }
     </style>
   </head>
@@ -1005,9 +1088,49 @@
             </div>
           </div>
         </div>
-        <div class="about-preview"></div>
-        <div class="skill-preview"></div>
-        <div class="project-preview"></div>
+        <div class="about-preview">
+          <section>
+            <article><h5>About Me</h5></article>
+            <article>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatum ea veritatis, impedit ab ipsam assumenda optio.
+                Nesciunt necessitatibus nobis similique molestias numquam,
+                asperiores blanditiis voluptatem quo deserunt alias voluptas
+                neque.
+              </p>
+            </article>
+          </section>
+          <section>
+            <article class="minicard"></article>
+            <article class="minicard"></article>
+            <article class="minicard"></article>
+            <article class="minicard"></article>
+          </section>
+        </div>
+        <div class="skill-preview">
+          <section>
+            <article><h5>Skills</h5></article>
+          </section>
+          <section>
+            <article class="minicard"></article>
+            <article class="minicard"></article>
+            <article class="minicard"></article>
+            <article class="minicard"></article>
+            <article class="minicard"></article>
+            <article class="minicard"></article>
+          </section>
+        </div>
+        <div class="project-preview">
+          <section>
+            <article><h5>Projects</h5></article>
+          </section>
+          <section>
+            <article class="minicard"></article>
+            <article class="minicard"></article>
+            <article class="minicard"></article>
+          </section>
+        </div>
         <div class="contact-preview"></div>
       </aside>
     </div>
