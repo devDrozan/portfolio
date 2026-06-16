@@ -23,6 +23,15 @@
         padding: 0;
         box-sizing: border-box;
       }
+      .glass {
+        background-color: rgba(255, 255, 255, 0.08); /* to change glass*/
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow:
+          0 8px 32px 0 rgba(0, 0, 0.12),
+          inset 0 1px rgba(255, 255, 255, 0.25);
+      }
       body {
         background-color: var(--bg);
         color: var(--text);
@@ -379,13 +388,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        box-shadow:
-          0 8px 32px 0 rgba(0, 0, 0.12),
-          inset 0 1px rgba(255, 255, 255, 0.25);
 
         border-radius: 24px;
       }
@@ -460,13 +462,7 @@
         height: 100%;
         align-items: center;
         padding-left: 10px;
-        background-color: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        box-shadow:
-          0 8px 32px 0 rgba(0, 0, 0.12),
-          inset 0 1px rgba(255, 255, 255, 0.25);
+
         border-radius: 24px;
         gap: 10px;
       }
@@ -564,13 +560,6 @@
         height: 100%;
         align-items: center;
         padding-left: 10px;
-        background-color: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        box-shadow:
-          0 8px 32px 0 rgba(0, 0, 0.12),
-          inset 0 1px rgba(255, 255, 255, 0.25);
 
         border-radius: 24px;
         margin-top: -10px;
@@ -591,13 +580,6 @@
       }
       .overviewUiBtn > div > button {
         display: flex;
-        background-color: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        box-shadow:
-          0 8px 32px 0 rgba(0, 0, 0.12),
-          inset 0 1px rgba(255, 255, 255, 0.25);
 
         border-radius: 5px;
         justify-content: center;
@@ -645,7 +627,6 @@
           inset 0 1px rgba(255, 255, 255, 0.25);
       }
       .sub-content > div {
-        display: flex;
         border: 1px solid rgba(255, 255, 255, 0.08);
         background-color: transparent;
       }
@@ -867,6 +848,70 @@
         font-size: 0.6rem;
         margin: 5px;
       }
+      .contact-preview {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+      }
+      .contact-preview > section:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        margin-left: 5px;
+        font-size: 0.7rem;
+        line-height: 1.2rem;
+        flex: 1;
+      }
+      .contact-preview > section:last-child {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        flex: 1;
+        margin-top: -45px;
+      }
+
+      .contact-preview > section:last-child .minicard {
+        display: flex;
+        align-self: flex-start;
+        justify-content: flex-start;
+        flex: 1;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        width: 90%;
+        height: 60%;
+        font-size: 0.6rem;
+        margin: 5px;
+      }
+      .contact-preview .minicard > i {
+        display: flex;
+        padding: 10px;
+        font-size: large;
+        background-color: #2d2f34;
+        aspect-ratio: 1;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+        color: lightseagreen;
+      }
+      .contact-preview .minicard > div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
     </style>
   </head>
 
@@ -939,7 +984,7 @@
           </section>
         </div>
         <div class="overview">
-          <section class="designConcept">
+          <section class="designConcept glass">
             <article class="colorConcept">
               <h4>Color Palette</h4>
               <div class="colorPalette">
@@ -958,35 +1003,37 @@
             </article>
           </section>
           <section class="sectionOverview">
-            <div class="UIsections">
+            <div class="UIsections glass">
               <h4>Section Overview</h4>
               <article class="overviewUiBtn">
                 <div>
-                  <button><i class="fas fa-home"></i></button><span>Home</span>
+                  <button class="glass"><i class="fas fa-home"></i></button
+                  ><span>Home</span>
                 </div>
 
                 <div>
-                  <button><i class="fas fa-user"></i></button
+                  <button class="glass"><i class="fas fa-user"></i></button
                   ><span>About Me</span>
                 </div>
 
                 <div>
-                  <button><i class="fas fa-code"></i></button
+                  <button class="glass"><i class="fas fa-code"></i></button
                   ><span>Skills</span>
                 </div>
 
                 <div>
-                  <button><i class="fas fa-project-diagram"></i></button
+                  <button class="glass">
+                    <i class="fas fa-project-diagram"></i></button
                   ><span>Projects</span>
                 </div>
 
                 <div>
-                  <button><i class="fas fa-envelope"></i></button
+                  <button class="glass"><i class="fas fa-envelope"></i></button
                   ><span>Contact</span>
                 </div>
               </article>
             </div>
-            <div class="myservices">
+            <div class="myservices glass">
               <section class="responsive service-card">
                 <article><i class="fas fa-desktop-alt"></i></article>
                 <article class="servicesDescription">
@@ -1131,7 +1178,39 @@
             <article class="minicard"></article>
           </section>
         </div>
-        <div class="contact-preview"></div>
+        <div class="contact-preview">
+          <section>
+            <article><h4>Contact Me</h4></article>
+            <article>
+              <p>
+                Feel free to reach out to me for any project or collaboration.
+              </p>
+            </article>
+          </section>
+          <section>
+            <article class="minicard">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <p style="color: #7c4dff">Email</p>
+                <p>monkeydluffy@gmail.com</p>
+              </div>
+            </article>
+            <article class="minicard">
+              <i class="fab fa-github"></i>
+              <div>
+                <p style="color: #7c4dff">Github</p>
+                <p>github.com/monkeydluffy</p>
+              </div>
+            </article>
+            <article class="minicard">
+              <i class="fab fa-linkedin"></i>
+              <div>
+                <p style="color: #7c4dff">Linkedin</p>
+                <p>Linkedin.com/in/monkeydluffy</p>
+              </div>
+            </article>
+          </section>
+        </div>
       </aside>
     </div>
   </body>
