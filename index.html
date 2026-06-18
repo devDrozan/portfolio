@@ -612,7 +612,7 @@
         width: 100%;
         margin-right: 60%;
         margin-top: 0%;
-        grid-template-rows: 3fr 2fr 2fr 2fr 2fr;
+        grid-template-rows: 3fr 2fr 2fr 4fr 3fr;
         box-shadow:
           0 8px 32px 0 rgba(0, 0, 0.12),
           inset 0 1px rgba(255, 255, 255, 0.25);
@@ -760,8 +760,6 @@
       }
 
       .previewcard-top {
-        justify-content: center;
-        align-items: center;
         width: 100%;
         flex: 1;
         background: var(--bg);
@@ -775,9 +773,13 @@
       }
       .skill-preview {
         display: grid;
-        grid-template-rows: 1fr 2fr;
+        grid-template-rows: 1fr 3fr;
         width: 100%;
         height: 100%;
+      }
+      .skill-preview .previewcard-top {
+        margin: 10px;
+        font-size: 1rem;
       }
 
       .previewcard-bottom {
@@ -789,14 +791,13 @@
       .about-preview .previewcard-bottom {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        justify-items: start;
         font-size: 0.6rem;
       }
       .skill-preview .previewcard-bottom {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         width: 100%;
-        height: 100%;
+        height: 90%;
         font-size: 1.2rem;
       }
       .minicard {
@@ -805,37 +806,90 @@
         border-radius: 10px;
         width: 90%;
         height: 80%;
-
         margin: 5px;
         padding: 5px;
+        align-items: center;
+      }
+      .about-preview .minicard {
+        align-items: flex-start;
+        padding: 10px;
+        margin: 10px;
+        line-height: 1rem;
       }
       .contact-preview .minicard {
-        align-items: center;
         font-size: 0.6rem;
+      }
+      .skill-preview .minicard {
+        justify-content: center;
+        flex-direction: column;
+        font-size: 1.5rem;
+      }
+      .skill-preview .minicard > p {
+        font-size: 0.6rem;
+        padding: 5px;
+      }
+      .html {
+        color: #e34f26;
+        text-shadow: 0 0 10px #e34f26;
+      }
+
+      .css {
+        color: #1572b6;
+        text-shadow: 0 0 10px #1572b6;
+      }
+
+      .js {
+        color: #f7df1e;
+        text-shadow: 0 0 10px #f7df1e;
+      }
+      .nodejs {
+        color: #f7df1e;
+        text-shadow: 0 0 10px #f7df1e;
+      }
+
+      .git {
+        color: #f05032;
+        text-shadow: 0 0 10px #f05032;
+      }
+
+      .github {
+        color: #ffffff;
+        text-shadow: 0 0 10px #ffffff;
+      }
+      .project-preview {
+        width: 100%;
+        height: 100%;
       }
 
       .project-preview .previewcard-top {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
         flex: 1;
         border: #130a22;
+        align-items: center;
+        padding: 5px;
+        margin: 5px;
       }
       .project-preview .previewcard-bottom {
         display: flex;
         flex-direction: row;
         align-items: center;
-        flex: 4;
+        flex: 5;
+        margin-top: 0px;
       }
-
+      .project-preview h5 {
+        justify-content: flex-start;
+        flex: 1;
+      }
+      .project-preview .viewall-right {
+        flex: 1;
+        margin-right: auto;
+        text-align: end;
+      }
       .contact-preview {
         justify-content: center;
         height: 100%;
         width: 100%;
       }
       .contact-preview .previewcard-top {
-        display: flex;
-        flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
         width: 100%;
@@ -1136,25 +1190,47 @@
           </section>
           <section class="previewcard-bottom flex-row">
             <article class="minicard glass">
-              <i class="fab fa-html5 color1"></i>
+              <i class="fab fa-html5 html"></i>
+              <p>HTML5</p>
             </article>
             <article class="minicard glass">
-              <i class="fab fa-css3-alt"></i>
+              <i class="fab fa-css3-alt css"></i>
+              <p>CSS3</p>
             </article>
-            <article class="minicard glass"><i class="fab fa-js"></i></article>
+            <article class="minicard glass">
+              <i class="fab fa-js js"></i>
+              <p>JS</p>
+            </article>
 
             <article class="minicard glass">
-              <i class="fab fa-node-js"></i>
+              <i class="fab fa-node-js nodejs"></i>
+              <p>NodeJS</p>
             </article>
-            <article class="minicard glass"><i class="fab fa-git"></i></article>
             <article class="minicard glass">
-              <i class="fab fa-github"></i>
+              <i class="fab fa-git git"></i>
+              <p>Git</p>
+            </article>
+            <article class="minicard glass">
+              <i class="fab fa-github github"></i>
+              <p>Github</p>
             </article>
           </section>
         </div>
         <div class="project-preview flex-col">
-          <section class="previewcardtop">
-            <article><h5>Projects</h5></article>
+          <section class="previewcard-top flex-row">
+            <h5>Projects</h5>
+            <article class="viewall-right">
+              <a
+                href="#"
+                class="aa"
+                style="
+                  color: var(--muted);
+                  text-decoration: none;
+                  text-align: justify-right;
+                "
+                >View All Projects </a
+              ><i class="fas fa-arrow-right"></i>
+            </article>
           </section>
           <section class="previewcard-bottom flex-row">
             <article class="minicard"></article>
@@ -1163,7 +1239,7 @@
           </section>
         </div>
         <div class="contact-preview flex-col">
-          <section class="previewcard-top">
+          <section class="previewcard-top flex-col">
             <article><h4>Contact Me</h4></article>
             <article>
               <p>
