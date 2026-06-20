@@ -37,13 +37,13 @@
       body {
         background-color: var(--bg);
         color: var(--text);
-        font-family:
-          "apple-system", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-          "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    
         overflow-x: hidden;
         scroll-behavior: smooth;
         padding: 24px;
-      }
+  font-family: "Poppins", sans-serif;
+}
+      
       .layout {
         display: grid;
         grid-template-columns: 5fr 3fr;
