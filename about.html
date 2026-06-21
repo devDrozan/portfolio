@@ -7,6 +7,11 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
     <title>About us</title>
     <style>
       :root {
@@ -21,6 +26,9 @@
         display: flex;
         flex-direction: row;
       }
+      body {
+        height: 2000px;
+      }
       .glass {
         background-color: rgba(255, 255, 255, 0.08); /* to change glass*/
         border: 1px solid rgba(255, 255, 255, 0.18);
@@ -33,8 +41,6 @@
       .login-form {
         align-items: flex-start;
         align-content: center;
-        width: 50%;
-        height: 100%;
         background: linear-gradient(90deg, blue, green);
         border-radius: 10px;
       }
@@ -53,7 +59,48 @@
     </style>
   </head>
   <body>
-    <form class="login-form glass flex-col">
+    <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-primary mb-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">RozanDev</a>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="bg-primary" style="height: 200px"></div>
+        </div>
+        <div class="carousel-item">
+          <div class="bg-success" style="height: 200px"></div>
+        </div>
+        <div class="carousel-item">
+          <div class="bg-warning" style="height: 200px"></div>
+        </div>
+        <div class="carousel-item">
+          <div class="bg-danger" style="height: 200px">
+            <img class="img-fluid" src="images/hero.png" alt="hero" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <form class="login-form glass flex-col col-md-6 justify-content-start mb-3">
       <label for="name"> Your Name</label><input type="text" id="name" />
       <label for="pwd">Password</label><input type="password" id="pwd" />
       <input type="submit" value="login" />
@@ -84,5 +131,130 @@
       <li class="list-group-item">Item Four</li>
       <li class="list-group-item">Item Five</li>
     </ul>
+
+    <form>
+      <div class="form-floating mb-3">
+        <input type="text" id="name" class="form-control" placeholder="Name" />
+        <label for="name">Your Name</label>
+      </div>
+      <div class="form-floating mb-3">
+        <textarea
+          id="address"
+          class="form-control"
+          placeholder="Address"
+        ></textarea>
+        <label for="address">Address</label>
+        <div class="form-text">Enter your full address</div>
+      </div>
+      <div class="mb-3">
+        <label for="gender">Gender</label>
+        <select id="gender" class="form-select">
+          <option value="default">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="drop-down">
+        <button
+          class="btn btn-dark dropdown-toggle mb-3"
+          data-bs-toggle="dropdown"
+        >
+          send now
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a class="dropdown-item" href="#">Send Now</a></li>
+          <li><a class="dropdown-item" href="#">Save to Draft</a></li>
+          <li><a class="dropdown-item" href="#">Preview</a></li>
+        </ul>
+      </div>
+    </form>
+    <form>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Username" />
+        <button type="button" class="btn btn-secondary">search</button>
+      </div>
+      <label for="email">Enter email adderess</label>
+      <div class="input-group mb-3">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Email"
+          id="email"
+        />
+        <span class="input-group-text">@example.com</span>
+      </div>
+      <label for="price">Price</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input class="form-control" id="price" placeholder="Price" />
+      </div>
+    </form>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p>some card content</p>
+        <a href="#" class="btn btn-info">more...</a>
+      </div>
+    </div>
+    <p>
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#item">
+        Link Button
+      </a>
+    </p>
+    <div class="collapse" id="item">
+      <div class="card card-body">
+        <h5 class="card-title"></h5>
+        <p>Some sample content</p>
+      </div>
+    </div>
+
+    <button
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#feedback"
+    >
+      Show Modal
+    </button>
+    <div class="modal fade" id="feedback">
+      <div class="modal-dialog form-floating">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Feedback</h5>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <textarea
+              class="form-control"
+              placeholder="Your feedback"
+            ></textarea>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary">SendFeedback</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="btn-group">
+        <a href="#" class="btn btn-primary">Home</a>
+        <a href="#" class="btn btn-primary">About</a>
+        <a href="#" class="btn btn-primary">Contact</a>
+      </div>
+      <div class="btn-group">
+        <a href="#" class="btn btn-outline-primary"
+          ><i class="fas fa-home"> Home</i></a
+        >
+        <a href="#" class="btn btn-outline-primary">About</a>
+        <a href="#" class="btn btn-outline-primary">Contact</a>
+      </div>
+      <ul class="pagination mt-4">
+        <li class="page-item"><a href="#" class="page-link">Previous</a></li>
+        <li class="page-item"><a href="#" class="page-link">1</a></li>
+        <li class="page-item"><a href="#" class="page-link">2</a></li>
+        <li class="page-item"><a href="#" class="page-link">3</a></li>
+        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+      </ul>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
