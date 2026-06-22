@@ -12,9 +12,74 @@
     <title>layoutplayground</title>
   </head>
   <body>
+    <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-primary mb-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"> RozanDev </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="#">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Skills</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projects</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <main class="bg-secondary py-5">
       <div class="container bg-light">
-        <div class="bg-light" style="height: 400px"></div>
+        <div class="carousel slide" data-bs-ride="carousel" id="slide2">
+          <ol class="carousel-indicators">
+            <li
+              data-bs-target="#slide2"
+              data-bs-slide-to="0"
+              class="active"
+            ></li>
+            <li data-bs-target="#slide2" data-bs-slide-to="1"></li>
+            <li data-bs-target="#slide2" data-bs-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/pj1.png" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="images/pj2.png" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="images/pj3.png" class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <a href="#slide2" class="carousel-control-prev" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a href="#slide2" class="carousel-control-next" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
       </div>
     </main>
     <section class="container py-5">
@@ -38,5 +103,6 @@
         &copy; Copyright 2020
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
