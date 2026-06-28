@@ -15,6 +15,19 @@
         padding: 0;
         box-sizing: border-box;
       }
+      .icon-box{
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+}
       .glass {
         background-color: rgba(255, 255, 255, 0.08); /* to change glass*/
         border: 1px solid rgba(255, 255, 255, 0.18);
