@@ -225,24 +225,19 @@
         margin-top: 25px;
         width: 100%;
       }
-      .cardinfo {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 30px;
-        margin-right: 10px;
-        flex: 1;
-      }
+      
       .cardinfo > p {
         border: 1px solid #704dff;
         border-radius: 5px;
         font-size: 0.6rem;
         padding: 5px;
         margin-bottom: 10px;
+        color: var(--text);
       }
       .cardinfo > em {
         font-size: 2rem;
         margin-bottom: 10px;
+        color: var(--text);
       }
       @media (max-width: 768px) {
         .cardinfo > p {
@@ -310,43 +305,45 @@
       }
       .social > a:hover {
         color: var(--muted);
-      }
+      } 
       .cardimage::before {
         content: "";
-
         position: absolute;
 
-        width: 49%;
-
         aspect-ratio: 1;
-
         border-radius: 50%;
-
         background: linear-gradient(#130a22, #3b82f6);
-
-        left: 50%;
-
-        top: 50%;
-
-        transform: translate(-86%, -82%);
-
         z-index: 1;
+         width:220px;
+    height:220px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+    z-index:0;
       }
       .cardimage {
-        display: flex;
-        position: relative;
-        align-items: center;
-        justify-content: center;
+      position:relative;
 
-        flex: 1;
+    min-height:220px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
       }
       .cardimage img {
-        width: 40%;
-
-        max-width: 420px;
-
-        object-fit: cover;
-        z-index: 3;
+   width:100%;
+    max-width:320px;
+    height:auto;
+    position:relative;
+    z-index:3;
+    object-fit:cover;
       }
       .orbit {
         position: absolute;
@@ -359,13 +356,13 @@
 
         border-radius: 50%;
 
-        top: 55%;
-
-        left: 52%;
-
-        transform: translate(-50%, -75%) rotate(-20deg);
-
         z-index: 2;
+
+    top:30%;
+
+    left:30%;
+
+    transform:translate(-50%,-50%) rotate(-20deg);
       }
 
       .overview {
@@ -388,7 +385,7 @@
         flex: 1;
         flex-direction: column;
 
-        border-bottom: 1px solid #a1a6ad;
+       
         width: 80%;
       }
       .colorConcept h4 {
@@ -431,7 +428,7 @@
       }
       .typoconcept {
         display: flex;
-        border-bottom: 1px solid #a1a6ad;
+       
         text-align: left;
         width: 80%;
         line-height: 1.5rem;
