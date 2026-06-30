@@ -388,28 +388,14 @@
        
         width: 80%;
       }
-      .colorConcept h4 {
-        display: flex;
-        align-self: flex-start;
-        padding: 10px;
-        margin-top: 20px;
-      }
-      .colorConcept {
-        display: flex;
-        flex-direction: column;
-      }
-      .colorPalette {
-        display: flex;
-        flex-direction: row;
-        align-self: flex-start;
-      }
+    
+    
       .colorPalette > div {
-        display: flex;
+       
         width: 30px;
         height: 30px;
-        margin-right: 10px;
         border-radius: 50%;
-        margin-top: 30px;
+        margin-left: 10px;
       }
       .color1 {
         background-color: #704dff;
@@ -430,10 +416,9 @@
         display: flex;
        
         text-align: left;
-        width: 80%;
-        line-height: 1.5rem;
-        margin-top: 10px;
-        margin-bottom: 10px;
+      
+    
+      
       }
 
       .sectionOverview {
@@ -518,15 +503,7 @@
         --glow: rgba(168, 85, 247, 0.25);
       }
 
-      .servicesDescription {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-
-        align-self: center;
-        padding: 0;
-        margin: 0;
-      }
+     
 
       .servicesDescription > h5 {
         color: #3b82f6;
@@ -536,6 +513,7 @@
       .servicesDescription p {
         font-size: 0.5rem;
         margin: 0px;
+        color: var(--text);
       }
 
       .UIsections {
